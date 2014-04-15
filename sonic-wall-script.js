@@ -5,7 +5,7 @@ jq.src = "https://raw.githubusercontent.com/gkchestertron/sonic-wall-dhcp-script
 document.getElementsByTagName('head')[0].appendChild(jq);
 */
 
-if (!jQuery) {
+if (!window.jQuery) {
 	var jq = document.createElement('script');
 	jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
 	document.getElementsByTagName('head')[0].appendChild(jq);
