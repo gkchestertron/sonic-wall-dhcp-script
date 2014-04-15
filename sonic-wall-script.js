@@ -12,7 +12,8 @@ if (!window.jQuery) {
 }
 
 sonicFill = {
-	fill: function (base, unique) {
+	fill: function (unique, base) {
+		base = base || '10.64.60';
 		var fills = this.parseAddress(unique),
 			$input0 = $('[name="dhcp_static_name"]'),
 			$input1 = $('[name="dhcp_static_ip"]'),
@@ -20,13 +21,11 @@ sonicFill = {
 			$input3 = $('[name="dhcpGateway"]'),
 			$input4 = $('[name="dhcpSubnet"]')
 
-		$input0.val(base + fills[0]);
-		$input1.val(fills[1]);
+		$input0.val(base + fills[1]);
+		$input1.val(fills[0]);
 		$input2.val(fills[2]);
 		$input3.val('10.64.63.251');
 		$input4.val('255.255.224.0');
-
-
 	}, 
 	parseAddress: function (unique) {
 		unique = unique.replace(/\s+/g,'');
