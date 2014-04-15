@@ -10,3 +10,28 @@ if (!window.jQuery) {
 	jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
 	document.getElementsByTagName('head')[0].appendChild(jq);
 }
+
+sonicFill = {
+	fill: function (base, unique) {
+		var fills = this.parseAddress(unique),
+			$input0 = $('[name="dhcp_static_name"]'),
+			$input1 = $('[name="dhcp_static_ip"]'),
+			$input2 = $('[name="dhcp_static_hw"]')
+			$input3 = $('[name="dhcpGateway"]'),
+			$input4 = $('[name="dhcpSubnet"]')
+
+		$input0.val(base + fills[0]);
+		$input1.val(fills[1]);
+		$input2.val(fills[2]);
+		$input3.val('10.64.63.251');
+		$input4.val('255.255.224.0');
+
+
+	}, 
+	parseAddress: function (unique) {
+		unique = unique.replace(/\s+/g,'');
+		unique = unique.replace(/INPTR/g,',');
+		unique = unique.replace(/;/g,',');
+		return unique.split(',');
+	}
+}
