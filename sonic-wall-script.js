@@ -20,12 +20,14 @@ sonicFill = {
 			$input2 = $('[name="dhcp_static_hw"]')
 			$input3 = $('[name="dhcpGateway"]'),
 			$input4 = $('[name="dhcpSubnet"]')
+			$button = $('name="ok"]');
 
 		$input0.val(fills[1]);
 		$input1.val(base + fills[0]);
 		$input2.val(fills[2]);
 		$input3.val('10.64.63.251');
 		$input4.val('255.255.224.0');
+		$button.click();
 	}, 
 	parseAddress: function (unique) {
 		unique = unique.replace(/\s+/g,'');
