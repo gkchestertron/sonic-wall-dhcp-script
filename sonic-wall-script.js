@@ -21,6 +21,7 @@ sonicFill = {
 			$input3 = $('[name="dhcpGateway"]'),
 			$input4 = $('[name="dhcpSubnet"]')
 			$button = $('[name="ok"]');
+			
 
 		$input0.val(fills[1]);
 		$input1.val(base + fills[0]);
